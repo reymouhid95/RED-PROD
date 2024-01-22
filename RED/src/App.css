@@ -248,7 +248,7 @@ body {
   right: 0;
   transform: translate(-40%, 0);
 }
-.navbar input[type="search"]:focus{
+.navbar input[type="search"]:focus {
   box-shadow: none;
 }
 
@@ -268,13 +268,6 @@ body {
 .no-hover:hover {
   background-color: transparent !important;
   color: inherit !important;
-}
-
-.onlineBtn {
-  width: 10px;
-  height: 10px;
-  flex-shrink: 0;
-  background-color: #00ff92;
 }
 
 .dashboardCard {
