@@ -32,10 +32,6 @@ function SidebarComp() {
             >
               Mouhamet Badiane
             </p>
-            <div className="d-flex align-items-center py-1">
-              <p className="rounded-circle onlineBtn me-2"></p>
-              <p style={{ fontSize: "11px" }}>en ligne</p>
-            </div>
           </div>
         </div>
       </div>

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
 import HotelsCard from "../components/HotelsCard";
 import Modals from "../components/Modals";
 import Button from "../components/Button";
