@@ -1,4 +1,3 @@
-import React from "react";
 import iconLogo from "../assets/icons/logo.svg";
 import FormInscription from "./FormInscription";
 

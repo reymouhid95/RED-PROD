@@ -1,6 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import DashboardCard from '../components/DashboardCard';
+import { Link } from "react-router-dom";
+import DashboardCard from "../components/DashboardCard";
 
 function Dashboard() {
   return (
@@ -21,4 +20,4 @@ function Dashboard() {
   );
 }
 
-export default Dashboard
+export default Dashboard;

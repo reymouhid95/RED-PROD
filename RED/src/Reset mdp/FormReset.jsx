@@ -1,4 +1,3 @@
-import React from 'react';
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
 
@@ -39,4 +38,4 @@ function FormReset() {
   );
 }
 
-export default FormReset
+export default FormReset;

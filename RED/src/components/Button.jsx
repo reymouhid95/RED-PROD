@@ -1,5 +1,4 @@
-import React from "react";
-
+/* eslint-disable react/prop-types */
 function Button({ text, icon, id, func }) {
   return (
     <div className="bouton text-center w-100">

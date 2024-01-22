@@ -1,6 +1,5 @@
-import React from 'react'
-
-function InputModal({label, type}) {
+/* eslint-disable react/prop-types */
+function InputModal({ label, type }) {
   return (
     <div className="col">
       <label htmlFor="email" className="form-label">
@@ -11,4 +10,4 @@ function InputModal({label, type}) {
   );
 }
 
-export default InputModal
+export default InputModal;
