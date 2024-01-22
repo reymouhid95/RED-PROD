@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 function CardContentDash({ icon, title, description, number, id }) {
   return (
     <div

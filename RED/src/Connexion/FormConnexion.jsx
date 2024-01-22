@@ -1,4 +1,4 @@
-import React from "react";
+/* eslint-disable react/no-unescaped-entities */
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
 
@@ -11,19 +11,13 @@ function FormConnexion() {
           <div className="row">
             <div className="col">
               <label>Email</label>
-              <input
-                type="email"
-                className="form-control outline-0"
-              />
+              <input type="email" className="form-control outline-0" />
             </div>
           </div>
           <div className="row">
             <div className="col">
               <label>Mot de passe</label>
-              <input
-                type="password"
-                className="form-control outline-0"
-              />
+              <input type="password" className="form-control outline-0" />
             </div>
           </div>
           <div className="row py-3">

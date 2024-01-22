@@ -1,6 +1,5 @@
-import React from 'react';
 import iconLogo from "../assets/icons/logo.svg";
-import FormConnexion from './FormConnexion';
+import FormConnexion from "./FormConnexion";
 
 function PageConnexion() {
   return (
@@ -18,4 +17,4 @@ function PageConnexion() {
   );
 }
 
-export default PageConnexion
+export default PageConnexion;

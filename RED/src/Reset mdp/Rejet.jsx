@@ -1,9 +1,7 @@
-import React from "react";
-import iconLogo from '../assets/icons/logo.svg'
+import iconLogo from "../assets/icons/logo.svg";
 import FormReset from "./FormReset";
 
 function Rejet() {
-
   return (
     <div className="connexion">
       <div className="d-flex justify-content-center align-items-center">

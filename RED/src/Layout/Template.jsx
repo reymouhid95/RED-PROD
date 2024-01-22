@@ -1,7 +1,5 @@
-import React from 'react';
-
+/* eslint-disable react/prop-types */
 function Template(props) {
-    
   return (
     <div className="container-fluid nin-vh-100 template p-0">
       <div className="d-flex contenu">
@@ -18,4 +16,4 @@ function Template(props) {
   );
 }
 
-export default Template
+export default Template;

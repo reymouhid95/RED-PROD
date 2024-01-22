@@ -1,11 +1,13 @@
-import React, {useState} from "react";
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 
 function NavUser({ Toggle }) {
-    const [notificationCount, setNotificationCount] = useState(3);
+  const [notificationCount, setNotificationCount] = useState(3);
   return (
     <nav className="navbar navbar-expand-md navbar-light border-bottom py-1">
       <div className="container-fluid">
