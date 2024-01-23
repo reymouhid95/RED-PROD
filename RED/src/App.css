@@ -12,21 +12,6 @@ body {
   height: 100%;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
 .card {
   padding: 2em;
 }
@@ -180,7 +165,6 @@ body {
 }
 
 .sidebar {
-  /* background-color: #282c34; */
   background-image: url("../src/assets/images/imagedefond.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -348,6 +332,13 @@ body {
 @media screen and (max-width: 768px) {
   .sidebar #logo span {
     font-size: 12px !important;
+  }
+
+  .navbar-nav {
+    display: flex;
+    flex-direction: row !important;
+    justify-content: space-around;
+    align-items: center;
   }
 
   .sidebar #logo #imgLogo {

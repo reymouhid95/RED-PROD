@@ -22,10 +22,10 @@ function SidebarComp() {
           style={{ width: "100%", height: "20%", marginTop: "90%" }}
         >
           <div className="ps-2">
-            <AccountCircle style={{ fontSize: "4rem" }} />
+            <AccountCircle style={{ fontSize: "3rem" }} />
           </div>
 
-          <div className="mx-3 pt-3">
+          <div className="mx-3 pt-1">
             <p
               style={{ fontWeight: "800", fontSize: "11px" }}
               className="p-0 m-0"
