@@ -4,13 +4,10 @@ import InputModal from "./InputModal";
 function FormModals() {
   const fileInputRef = useRef(null);
   const handleImageIconClick = () => {
-    // Ajoutez la classe pour rendre l'input visible temporairement
     fileInputRef.current.classList.add("temp-visible");
 
-    // Déclenchez le click de l'input
     fileInputRef.current.click();
 
-    // Supprimez la classe après un court délai
     setTimeout(() => {
       fileInputRef.current.classList.remove("temp-visible");
     }, 100);
@@ -20,7 +17,7 @@ function FormModals() {
     <div className="modal-body px-5">
       <form>
         <div className="row">
-          <InputModal type={"text"} label={"Adresse de l'hotel"} />
+          <InputModal type={"text"} label={"Nom de l'hotel"} />
           <InputModal type={"text"} label={"Adresse"} />
         </div>
         <div className="row">

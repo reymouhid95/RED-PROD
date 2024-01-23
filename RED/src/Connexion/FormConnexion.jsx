@@ -24,9 +24,7 @@ function FormConnexion() {
             <div className="col">
               <div className="form-check">
                 <input className="form-check-input" type="checkbox" />
-                <label className="form-check-label">
-                  Accepter les termes et la politique
-                </label>
+                <label className="form-check-label">Garder moi connecter</label>
               </div>
             </div>
           </div>
