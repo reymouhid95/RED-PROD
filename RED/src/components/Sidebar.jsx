@@ -11,7 +11,7 @@ function SidebarComp() {
         <span className="brand-name fs-5 fw-bold mx-2">RED PRODUCT</span>
       </div>
       <h6 className="mx-3">Principal</h6>
-      <div className="linkSidebar">
+      <div className="linkSidebar py-2">
         {menu.map((elem, index) => (
           <SidebarComponent {...elem} key={index} />
         ))}
@@ -24,7 +24,6 @@ function SidebarComp() {
           <div className="ps-2">
             <AccountCircle style={{ fontSize: "3rem" }} />
           </div>
-
           <div className="mx-3 pt-1">
             <p
               style={{ fontWeight: "800", fontSize: "11px" }}

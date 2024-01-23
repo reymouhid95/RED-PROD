@@ -10,7 +10,7 @@ function SidebarComponent({ title, icon, path }) {
       tabIndex="0"
     >
       <span>{icon}</span>
-      <span className="fs-5 mx-2">{title}</span>
+      <span className="mx-2">{title}</span>
     </Link>
   );
 }
