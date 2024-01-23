@@ -5,7 +5,7 @@ function InputModal({ label, type }) {
       <label htmlFor="email" className="form-label">
         {label}
       </label>
-      <input type={type} className="form-control" id="email" placeholder="" />
+      <input type={type} className="form-control" id="email" />
     </div>
   );
 }
