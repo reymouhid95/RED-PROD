@@ -5,12 +5,12 @@ function SidebarComponent({ title, icon, path }) {
   return (
     <Link
       style={{ textDecoration: "none" }}
-      className="py-1 ps-3 my-2 items "
+      className="ps-3 my-2 items "
       to={path}
       tabIndex="0"
     >
       <span>{icon}</span>
-      <span className="fs-5 mx-2">{title}</span>
+      <span className="mx-2">{title}</span>
     </Link>
   );
 }

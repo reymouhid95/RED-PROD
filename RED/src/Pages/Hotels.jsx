@@ -10,7 +10,7 @@ function Hotels() {
   return (
     <Link to="/admin/hotels" style={{ textDecoration: "none", color: "#000" }}>
       <div className="hotels">
-        <div className="titleHotels d-flex justify-content-between px-4 py-3 align-items-center">
+        <div className="titleHotels d-flex justify-content-between px-3 py-2 align-items-center">
           <h6>Hotels</h6>
           <div className="pb-2">
             <Button
@@ -21,7 +21,7 @@ function Hotels() {
             />
           </div>
         </div>
-        <div className="hotelsCard py-5 mt-4">
+        <div className="hotelsCard py-4">
           <HotelsCard />
         </div>
         <Modals show={modalShow} onHide={() => setModalShow(false)} />
