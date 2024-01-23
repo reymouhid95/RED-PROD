@@ -5,7 +5,7 @@ import { AccountCircle } from "@mui/icons-material";
 
 function SidebarComp() {
   return (
-    <div className="vh-100 sidebar py-2">
+    <div className="vh-100 sidebar py-1">
       <div className="m-2 pb-2 ps-1" id="logo">
         <img src={logo} alt="icon" />
         <span className="brand-name fs-5 fw-bold mx-2">RED PRODUCT</span>

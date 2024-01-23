@@ -5,7 +5,7 @@ function SidebarComponent({ title, icon, path }) {
   return (
     <Link
       style={{ textDecoration: "none" }}
-      className="py-1 ps-3 my-2 items "
+      className="ps-3 my-2 items "
       to={path}
       tabIndex="0"
     >
