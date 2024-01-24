@@ -1,13 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
-import './index.css'
-import { Navigate, RouterProvider, createBrowserRouter } from 'react-router-dom';
-import Rejet from './Reset mdp/Rejet.jsx';
-import Dashboard from './Pages/Dashboard.jsx';
-import Hotels from './Pages/Hotels.jsx';
-import PageInscription from './Inscription/PageInscription.jsx';
-import PageConnexion from './Connexion/PageConnexion.jsx';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App.jsx";
+import "./index.css";
+import {
+  Navigate,
+  RouterProvider,
+  createBrowserRouter,
+} from "react-router-dom";
+import Rejet from "./Reset mdp/Rejet.jsx";
+import Dashboard from "./Pages/Dashboard.jsx";
+import Hotels from "./Pages/Hotels.jsx";
+import PageInscription from "./Inscription/PageInscription.jsx";
+import PageConnexion from "./Connexion/PageConnexion.jsx";
 
 const route = createBrowserRouter([
   {
@@ -15,15 +19,15 @@ const route = createBrowserRouter([
     element: <Navigate to="/connexion" />,
   },
   {
-    path: "/",
+    path: "/admin",
     element: <App />,
     children: [
       {
-        path: "admin/dashboard",
+        path: "dashboard",
         element: <Dashboard />,
       },
       {
-        path: "admin/hotels",
+        path: "hotels",
         element: <Hotels />,
       },
     ],
@@ -42,9 +46,8 @@ const route = createBrowserRouter([
   },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={route}>
-    </RouterProvider>
-  </React.StrictMode>,
-)
+    <RouterProvider router={route}></RouterProvider>
+  </React.StrictMode>
+);

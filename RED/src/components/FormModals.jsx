@@ -16,15 +16,15 @@ function FormModals() {
   return (
     <div className="modal-body px-5">
       <form>
-        <div className="row">
+        <div className="row mb-3">
           <InputModal type={"text"} label={"Nom de l'hotel"} />
           <InputModal type={"text"} label={"Adresse"} />
         </div>
-        <div className="row">
+        <div className="row mb-3">
           <InputModal type={"email"} label={"E-mail"} />
           <InputModal type={"number"} label={"Numéro de téléphone"} />
         </div>
-        <div className="row">
+        <div className="row mb-3">
           <InputModal type={"number"} label={"Prix par nuit"} />
           <div className="col">
             <label htmlFor="devise" className="form-label">
