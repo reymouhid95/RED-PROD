@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 import HotelsCard from "../components/HotelsCard";
 import Modals from "../components/Modals";
@@ -9,7 +8,7 @@ function Hotels() {
   const [modalShow, setModalShow] = useState(false);
 
   return (
-    <Link to="/admin/hotels" style={{ textDecoration: "none", color: "#000" }}>
+    <div to="/admin/hotels" style={{ textDecoration: "none", color: "#000" }}>
       <div className="hotels">
         <div className="titleHotels d-flex justify-content-between px-4 py-3 align-items-center">
           <h6>Hotels</h6>
@@ -27,7 +26,7 @@ function Hotels() {
         </div>
         <Modals show={modalShow} onHide={() => setModalShow(false)} />
       </div>
-    </Link>
+    </div>
   );
 }
 

@@ -1,9 +1,18 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-
-import Button from "./Button";
+import { useState } from "react";
 import FormModals from "./FormModals";
 
 function Modals(props) {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = () => {
+    setShowModal(true);
+  };
+  const handleHideModal = () => {
+    setShowModal(false);
+  };
+
   return (
     <div
       className={`modal fade ${props.show ? "show" : ""}`}
@@ -15,11 +24,7 @@ function Modals(props) {
       <div className="modal-dialog modal-lg" role="document">
         <div className="modal-content px-3">
           <div className="modal-header border-none">
-            <button
-              type="button"
-              className="btn arrow"
-              onClick={props.onHide}
-            >
+            <button type="button" className="btn arrow" onClick={props.onHide}>
               <i className="bi bi-arrow-left fs-4"></i>
             </button>
             <h5 className="modal-title" id="contained-modal-title-vcenter">
@@ -32,12 +37,8 @@ function Modals(props) {
               aria-label="Close"
             ></button>
           </div>
-          <FormModals />
-          <div className="modal-footer border-none">
-            <div className="col-3">
-              <Button text={"Enrégistré"} id={"save"} func={props.onHide}/>
-            </div>
-          </div>
+          <FormModals show={showModal} onHide={handleHideModal} />
+          <div className="modal-footer border-none"></div>
         </div>
       </div>
     </div>
