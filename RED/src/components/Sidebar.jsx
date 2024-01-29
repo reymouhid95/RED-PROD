@@ -16,26 +16,23 @@ function SidebarComp() {
           <SidebarComponent {...elem} key={index} />
         ))}
       </div>
-      <div style={{ height: "50%" }} className="d-flex justify-content-center ">
+      <div style={{ height: "80%" }} className="d-flex justify-content-center ">
         <div
           className="d-flex align-items-center contentOnline pt-5"
           style={{ width: "100%", height: "20%", marginTop: "90%" }}
         >
-          <div className="ps-2">
-            <AccountCircle style={{ fontSize: "4rem" }} />
+          <div className="ps-3">
+            <AccountCircle style={{ fontSize: "2.8rem" }} />
           </div>
 
-          <div className="mx-3 pt-3">
+          <div className="mx-2 pt-2">
             <p
               style={{ fontWeight: "800", fontSize: "11px" }}
-              className="p-0 m-0"
+              className="p-0 m-0 name"
             >
-              Mouhamet Badiane
+              Amadou Oury Bah
             </p>
-            <div className="d-flex align-items-center py-1">
-              <p className="rounded-circle onlineBtn me-2"></p>
-              <p style={{ fontSize: "11px" }}>en ligne</p>
-            </div>
+            <div className="d-flex align-items-center py-1"></div>
           </div>
         </div>
       </div>

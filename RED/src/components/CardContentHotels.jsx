@@ -1,41 +1,66 @@
-/* eslint-disable no-unused-vars */
+import { useState } from "react";
+import HotelsInfos from "./HotelsInfos";
+
 /* eslint-disable react/prop-types */
-import { useEffect, useState } from "react";
-import HotelServices from "../services/hotelServices";
-
-function CardContentHotels({ img, title, adress, price }) {
-  const [hotels, setHotels] = useState([]);
-
-  useEffect(() => {
-    fetchHotels();
-  }, []);
-
-  const fetchHotels = async () => {
-    try {
-      // Utilisez la méthode getHotels pour récupérer la liste des hôtels
-      const response = await HotelServices.getHotels();
-      setHotels(response.data);
-    } catch (error) {
-      console.error("Erreur lors de la récupération des hôtels :", error);
-    }
-  };
+function CardContentHotels({
+  title,
+  address,
+  price,
+  currency,
+  email,
+  number,
+  img,
+  handleUpdate,
+  handleDelete,
+  setTitle,
+  setAddress,
+  setPrice,
+  setCurrency,
+  setEmail,
+  setNumber,
+  setImg,
+}) {
+  const [modalShow, setModalShow] = useState(false);
 
   return (
-    <div>
-      {hotels.map((hotel, index) => (
-        <div key={index} className="card p-0 mb-4" style={{ width: "15rem" }}>
-          <img src={img} className="card-img-top img-fluid" alt="Hôtel" />
-          <div className="card-body">
-            <p style={{ color: "#8D4B38", fontSize: "10px" }}>
-              {hotel.address}
-            </p>
-            <h6 className="card-title fw-bold" style={{ color: "#222222" }}>
-              {hotel.title}
-            </h6>
-            <p className="card-text">{hotel.price}</p>
-          </div>
+    <div className="card p-0 mb-4 cardHotels" style={{ width: "14rem" }}>
+      <img
+        src={img}
+        className="card-img-top img-fluid pe-auto imageCard"
+        alt="Image"
+        onClick={() => setModalShow(true)}
+      />
+      <div className="card-body">
+        <p style={{ color: "#8D4B38", fontSize: "10px" }}>{address}</p>
+        <h6 className="card-title fw-bold" style={{ color: "#222222" }}>
+          {title}
+        </h6>
+        <div>
+          <p className="card-text">
+            {price} {currency} par nuit
+          </p>
         </div>
-      ))}
+      </div>
+      <HotelsInfos
+        show={modalShow}
+        title={title}
+        currency={currency}
+        img={img}
+        number={number}
+        email={email}
+        address={address}
+        price={price}
+        onHide={() => setModalShow(false)}
+        handleUpdate={handleUpdate}
+        handleDelete={handleDelete}
+        setTitle={setTitle}
+        setAddress={setAddress}
+        setEmail={setEmail}
+        setPrice={setPrice}
+        setNumber={setNumber}
+        setCurrency={setCurrency}
+        setImg={setImg}
+      />
     </div>
   );
 }

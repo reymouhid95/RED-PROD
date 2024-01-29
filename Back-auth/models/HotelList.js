@@ -5,9 +5,9 @@ const { Schema } = mongoose;
 const hotelSchema = new Schema({
   img: String,
   title: String,
-  price: Number,
+  price: String,
   address: String,
-  number: Number,
+  number: String,
   email: String,
   currency: String,
 });

@@ -30,7 +30,7 @@ const HotelController = {
       // Enregistrer l'hôtel dans la base de données
       const savedHotel = await newHotel.save();
 
-      res.status(201).json(savedHotel);
+      res.status(201).json({ ...savedHotel._doc, imgURL: `/images/${img}` });
     } catch (error) {
       console.error(error);
       res.status(500).json({ message: "Erreur interne du serveur" });

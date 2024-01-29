@@ -1,11 +1,24 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/no-unescaped-entities */
 import Button from "../components/Button";
 import { Link, useNavigate } from "react-router-dom";
 import AuthServices from "../services/authServices";
 import { useForm, Controller } from "react-hook-form";
+import { Toaster, toast } from "sonner";
+import { useEffect } from "react";
 
 function FormConnexion() {
   const navigate = useNavigate();
+
+  // // Vérification de la connexion de l'utilisateur
+  // useEffect(() => {
+  //   const user = JSON.parse(localStorage.getItem("hotelUser"));
+  //   if (user) {
+  //     // Si l'utilisateur est connecté, rediriger vers la page du tableau de bord
+  //     navigate("/admin/dashboard");
+  //   }
+  // }, [navigate]);
+
   const defaultValues = {
     name: "",
     email: "",
@@ -20,18 +33,28 @@ function FormConnexion() {
   } = useForm(defaultValues);
   const onSubmit = async (data) => {
     try {
+      const userExists = await AuthServices.checkUserExists(data.email);
+      // Vérifier si l'utilisateur existe
+      if (!userExists.data.exists) {
+        toast.warning(
+          "Utilisateur non trouvé. Veuillez vérifier vos informations."
+        );
+        return;
+      }
+      // Si l'utilisateur existe, continuer avec la connexion
       const response = await AuthServices.loginUser(data);
       localStorage.setItem("hotelUser", JSON.stringify(response.data));
-      alert("Utilisateur connecté");
+      reset();
+      navigate("/admin/dashboard");
     } catch (err) {
       console.error(err.message);
+      toast.error("Erreur lors de la connexion");
     }
-    reset();
-    navigate("/admin/dashboard");
   };
 
   return (
-    <div className="">
+    <div>
+      <Toaster position="top-center" />
       <div className="card form-demo">
         <h5 className="text-start">Connectez-vous en tant que Admin</h5>
         <div className="form">
@@ -83,7 +106,7 @@ function FormConnexion() {
                     {...register("acceptTerms", { required: true })}
                   />
                   <label className="form-check-label">
-                    Accepter les termes et la politique
+                    Garder moi connecter
                   </label>
                 </div>
               </div>

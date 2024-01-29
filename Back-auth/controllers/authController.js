@@ -22,6 +22,20 @@ async function registerUser(req, res) {
   }
 }
 
+// Vérifiation des données de l'utilisateur
+async function checkUserExists(req, res) {
+  try {
+    const { email } = req.body;
+    const user = await User.findOne({ email });
+    res.send({ exists: !!user });
+  } catch (err) {
+    console.error(err);
+    res
+      .status(500)
+      .send({ message: "Erreur lors de la vérification de l'utilisateur" });
+  }
+}
+
 // Connecter un utilisateur
 async function loginUser(req, res) {
   try {
@@ -70,7 +84,7 @@ async function logoutUser(req, res) {
       return res.status(401).send({ message: "Le jeton a déjà été révoqué" });
     }
 
-    blacklist.add(cleanedToken);
+    blacklist.delete(cleanedToken); // Supprimer le jeton de l'ensemble blacklist
 
     res.send({ message: "Utilisateur déconnecté" });
   } catch (err) {
@@ -109,4 +123,5 @@ module.exports = {
   loginUser,
   logoutUser,
   resetPassword,
+  checkUserExists,
 };

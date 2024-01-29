@@ -1,16 +1,11 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
-import { useState } from "react";
-import FormModals from "./FormModals";
+import Hotels from "./NewHotels";
 
 function Modals(props) {
-  const [showModal, setShowModal] = useState(false);
-
-  const handleShowModal = () => {
-    setShowModal(true);
-  };
-  const handleHideModal = () => {
-    setShowModal(false);
+  const handleOutsideClick = (e) => {
+    if (e.target.classList.contains("modal")) {
+      props.onHide();
+    }
   };
 
   return (
@@ -20,10 +15,11 @@ function Modals(props) {
       style={{ display: props.show ? "block" : "none" }}
       role="dialog"
       aria-labelledby="contained-modal-title-vcenter"
+      onClick={handleOutsideClick}
     >
       <div className="modal-dialog modal-lg" role="document">
-        <div className="modal-content px-3">
-          <div className="modal-header border-none">
+        <div className="modal-content px-3 border-none">
+          <div className="modal-header border-0">
             <button type="button" className="btn arrow" onClick={props.onHide}>
               <i className="bi bi-arrow-left fs-4"></i>
             </button>
@@ -37,8 +33,7 @@ function Modals(props) {
               aria-label="Close"
             ></button>
           </div>
-          <FormModals show={showModal} onHide={handleHideModal} />
-          <div className="modal-footer border-none"></div>
+          <Hotels onHide={props.onHide} fetchHotels={props.fetchHotels} />
         </div>
       </div>
     </div>

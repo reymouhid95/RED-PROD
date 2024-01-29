@@ -7,10 +7,12 @@ import Template from "./Layout/Template";
 import SidebarComp from "./components/Sidebar";
 import { Route, Routes } from "react-router-dom";
 import NavBar from "./components/Navbar";
+import { Toaster } from "sonner";
 
 function App() {
   return (
     <div>
+      <Toaster position="top-center" />
       <Template sidebar={<SidebarComp />} navbar={<NavBar />}>
         <Routes>
           <Route path="/admin/dashboard" element={<Dashboard />} />

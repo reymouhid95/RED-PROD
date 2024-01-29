@@ -3,10 +3,12 @@
 import React from "react";
 import { useForm, Controller } from "react-hook-form";
 import Button from "../components/Button";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AuthServices from "../services/authServices";
+import { Toaster, toast } from "sonner";
 
 function FormInscription() {
+  const navigate = useNavigate();
   const defaultValues = {
     name: "",
     email: "",
@@ -25,16 +27,22 @@ function FormInscription() {
   const onSubmit = async (data) => {
     try {
       const response = await AuthServices.registerUser(data);
-      alert("Utilisateur inscrit avec succès");
+      toast.success("Utilisateur inscrit avec succès");
       reset();
+      setTimeout(() => {
+        navigate("/connexion");
+      }, 2000);
     } catch (err) {
       console.error(err.message);
-      alert("Erreur lors de l'inscription. Veuillez vérifier les détails.");
+      toast.error(
+        "Erreur lors de l'inscription. Veuillez vérifier les détails."
+      );
     }
   };
 
   return (
-    <div className="">
+    <div>
+      <Toaster position="top-center" />
       <div className="card form-demo">
         <h5 className="text-start">Inscrivez-vous en tant qu'Admin</h5>
         <div className="form">

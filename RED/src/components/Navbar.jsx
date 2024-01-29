@@ -5,9 +5,21 @@ import { Link } from "react-router-dom";
 import LogoutIcon from "@mui/icons-material/Logout";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
+import AuthServices from "../services/authServices";
+import { toast } from "sonner";
 
 function NavUser({ Toggle }) {
   const [notificationCount, setNotificationCount] = useState(3);
+
+  const handleLogout = async (data) => {
+    try {
+      const response = await AuthServices.logoutUser(data);
+    } catch (err) {
+      console.error(err.message);
+      toast.error("Erreur lors de la déconnexion");
+    }
+  };
+
   return (
     <nav className="navbar navbar-expand-md navbar-light border-bottom py-1">
       <div className="container-fluid">
@@ -37,7 +49,7 @@ function NavUser({ Toggle }) {
               <input
                 className="form-control border-0 bg-transparent"
                 type="search"
-                placeholder="Recherche"
+                placeholder="Rechercher"
                 aria-label="Search"
               />
             </div>
