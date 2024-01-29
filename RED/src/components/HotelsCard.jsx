@@ -33,7 +33,7 @@ function HotelsCard(props) {
 
   useEffect(() => {
     fetchHotels();
-  }, []);
+  }, [fetchHotels]);
 
   // Mise à jour d'un hôtel
   const handleUpdate = async (hotelId) => {
@@ -83,7 +83,7 @@ function HotelsCard(props) {
             <CardContentHotels
               {...hotel}
               key={index}
-              img={hotel.imgURL}
+              img={`http://localhost:5000/images/${hotel.img}`}
               handleUpdate={() => handleUpdate(hotel._id)}
               handleDelete={() => handleDelete(hotel._id)}
               setTitle={(e) => setTitle(e.target.value)}
