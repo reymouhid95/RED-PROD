@@ -15,6 +15,7 @@ function Hotels(props) {
   const [hotels, setHotels] = useState([]);
 
   useEffect(() => {
+    // Récupérer la liste des hôtels depuis le serveur
     const fetchHotels = async () => {
       try {
         const response = await HotelServices.getHotels();
@@ -44,7 +45,7 @@ function Hotels(props) {
 
     try {
       const response = await HotelServices.addHotel(formDataToSend);
-      setHotels([...hotels, response.data]);
+      setHotels([...hotels, response.data]); // Ajouter le nouvel hôtel à la liste existante
       toast.success("Hôtel ajouté avec succès");
       setTitle("");
       setAddress("");
