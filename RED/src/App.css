@@ -126,7 +126,7 @@ body {
 }
 
 .hotels #saveUpdate {
-  background-color: #fcc100 !important;
+  background-color: rgb(13, 177, 177) !important;
   border: none !important;
 }
 .hotels #delete {

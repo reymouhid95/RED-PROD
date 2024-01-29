@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Button from "./Button";
 import FormModals from "./FormModals";
+import { BsPencilSquare, BsCheck, BsTrash } from "react-icons/bs";
 
 function HotelsInfos(props) {
   const [isEditing, setIsEditing] = useState(false);
@@ -77,17 +78,17 @@ function HotelsInfos(props) {
           </div>
           <div className="modal-footer border-0">
             <div className="col-12 d-flex justify-content-center">
-              <div className="col-4">
+              <div className="col-2">
                 <Button
-                  text={isEditing ? "Enregistrer" : "Modifier"}
+                  text={isEditing ? <BsCheck /> : <BsPencilSquare />}
                   id={isEditing ? "update" : "saveUpdate"}
                   type={"button"}
                   func={handleEditClick}
                 />
               </div>
-              <div className="col-4 mx-3 border-none bg-transparent">
+              <div className="col-2 mx-3 border-none bg-transparent">
                 <Button
-                  text={"Supprimer"}
+                  text={<BsTrash />}
                   id={"delete"}
                   type={"button"}
                   func={props.handleDelete}
