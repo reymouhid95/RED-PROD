@@ -44,8 +44,11 @@ function HotelsCard(props) {
     formDataToSend.append("number", number);
     formDataToSend.append("price", price);
     formDataToSend.append("currency", currency);
+    if (img) {
+      formDataToSend.append("img", img);
+    }
     try {
-      const response = await HotelServices.updateHotel(hotelId);
+      const response = await HotelServices.updateHotel(hotelId, formDataToSend);
       setHotels(response.data);
       fetchHotels();
       toast.success("Mise à jour effectuée!");
