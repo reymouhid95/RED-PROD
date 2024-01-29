@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import FormModals from "./FormModals";
 import HotelServices from "../services/hotelServices";
 import { toast } from "sonner";
@@ -12,6 +12,21 @@ function Hotels(props) {
   const [price, setPrice] = useState(0);
   const [currency, setCurrency] = useState("");
   const [img, setImg] = useState(null);
+  const [hotels, setHotels] = useState([]);
+
+  useEffect(() => {
+    const fetchHotels = async () => {
+      try {
+        const response = await HotelServices.getHotels();
+        setHotels(response.data);
+      } catch (error) {
+        console.error("Erreur lors de la récupération des hôtels", error);
+        toast.error("Erreur lors de la récupération des hôtels");
+      }
+    };
+
+    fetchHotels();
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -29,8 +44,7 @@ function Hotels(props) {
 
     try {
       const response = await HotelServices.addHotel(formDataToSend);
-      console.log(response.data);
-      props.fetchHotels;
+      setHotels([...hotels, response.data]);
       toast.success("Hôtel ajouté avec succès");
       setTitle("");
       setAddress("");

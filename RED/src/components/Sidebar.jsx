@@ -1,9 +1,11 @@
+/* eslint-disable react/prop-types */
 import logo from "../assets/icons/logo.svg";
 import SidebarComponent from "./SidebarComponent";
 import { menu } from "./Utils";
 import { AccountCircle } from "@mui/icons-material";
+import SearchIcon from "@mui/icons-material/Search";
 
-function SidebarComp() {
+function SidebarComp(props) {
   return (
     <div className="vh-100 sidebar py-2">
       <div className="m-2 pb-2 ps-1" id="logo">
@@ -16,6 +18,21 @@ function SidebarComp() {
           <SidebarComponent {...elem} key={index} />
         ))}
       </div>
+      <button
+        style={{
+          textDecoration: "none",
+          backgroundColor: "transparent",
+          color: "#fff",
+        }}
+        className="py-3 ps-3 my-2 items d-flex align-items-center gap-2 border-0"
+        tabIndex="0"
+        id="search-icon"
+        onClick={props.toggleInputSearch}
+      >
+        <span className="iconSidebar">
+          <SearchIcon />
+        </span>
+      </button>
       <div style={{ height: "80%" }} className="d-flex justify-content-center ">
         <div
           className="d-flex align-items-center contentOnline pt-5"
