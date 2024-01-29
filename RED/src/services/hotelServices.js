@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // URL du serveur où se trouve l'API
-const SERVER_URL = "http://localhost:5000/api";
+const SERVER_URL = "https://red-pro.onrender.com/api";
 
 // Ajouter un nouvel hôtel
 const addHotel = (data) => {

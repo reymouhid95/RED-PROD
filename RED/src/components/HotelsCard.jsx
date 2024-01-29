@@ -86,7 +86,7 @@ function HotelsCard(props) {
             <CardContentHotels
               {...hotel}
               key={index}
-              img={`http://localhost:5000/images/${hotel.img}`}
+              img={`https://red-pro.onrender.com/images/${hotel.img}`}
               handleUpdate={() => handleUpdate(hotel._id)}
               handleDelete={() => handleDelete(hotel._id)}
               setTitle={(e) => setTitle(e.target.value)}
